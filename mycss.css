@@ -1,9 +1,9 @@
 .container-fluid{
-  margin-top:10px;
+  margin-top:15px;
 }
 .date{
   font-weight: bold;
 }
 .temperature{
-  font-size:5em;
+  font-size:8em;
 }
