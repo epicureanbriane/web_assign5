@@ -49,7 +49,7 @@ var changeToday = function(temperature_now, today, weather, yahoocode  ){
 /* $('.temperature').replaceWith('<span class="temperature">'
                               + f2c(temperature_now)
                               + '</span>'); */
-$('.temperature').text(f2c(temperature_now));
+$('.temperature').text( Math.round((f-32.0)*5.0/9.0)(temperature_now));
                                                           
 $('.condition').replaceWith('<div class="condition"><span class="date">'
                               + today
@@ -66,7 +66,7 @@ var changeDay1 = function(tempL, tempH, day,  yahoocode ){
      if (index === 0) {$(this).text(day)}
      });
   $('td').each( function (index) {
-     if (index===0) { $(this).replaceWith('<td>'+f2c(tempL)+'-'+f2c(tempH)+' &#8451;</td>');}  
+     if (index===0) { $(this).replaceWith('<td>'+ Math.round((f-32.0)*5.0/9.0)(tempL)+'-'+f Math.round((f-32.0)*5.0/9.0)(tempH)+' &#8451;</td>');}  
     });
   setSkyconsByYahooCode("day1",yahoocode);                              
 };
@@ -86,7 +86,7 @@ var changeDay3 = function(tempL, tempH, day,  yahoocode ){
      if (index === 2) {$(this).text(day)}
      });
   $('td').each( function (index) {
-     if (index===2) { $(this).replaceWith('<td>'+f2c(tempL)+'-'+f2c(tempH)+' &#8451;</td>');}  
+     if (index===2) { $(this).replaceWith('<td>'+ Math.round((f-32.0)*5.0/9.0)(tempL)+'-'+ Math.round((f-32.0)*5.0/9.0)(tempH)+' &#8451;</td>');}  
     });
   setSkyconsByYahooCode("day3",yahoocode);                              
 };  
@@ -163,118 +163,7 @@ var setSkyconsByYahooCode  = function(canvasid,yahoocode) {
     case "10":  //freezing rain
         skycons.set(canvasid, Skycons.RAIN);
         break;        
-    case "11":  //showers
-        skycons.set(canvasid, Skycons.RAIN);
-        break;        
-    case "12":  //showers
-        skycons.set(canvasid, Skycons.RAIN);
-        break;        
-    case "13":  //snow flurries
-        skycons.set(canvasid, Skycons.SNOW);
-        break;        
-    case "14":  //light snow showers
-        skycons.set(canvasid, Skycons.SNOW);
-        break;        
-    case "15":  //blowing snow
-        skycons.set(canvasid, Skycons.SNOW);
-        break;        
-    case "16":  //snow
-        skycons.set(canvasid, Skycons.SNOW);
-        break;        
-    case "17":  //hail
-        skycons.set(canvasid, Skycons.SNOW);
-        break;        
-    case "18":  //sleet
-        skycons.set(canvasid, Skycons.SLEET);
-        break;        
-    case "19":  //dust
-        skycons.set(canvasid, Skycons.FOG);
-        break;        
-    case "20":  //foggy
-        skycons.set(canvasid, Skycons.FOG);
-        break;       
-    case "21":  //haze
-        skycons.set(canvasid, Skycons.FOG);
-        break;       
-    case "22":  //smoky
-        skycons.set(canvasid, Skycons.FOG);
-        break;       
-    case "23":  //blustery
-        skycons.set(canvasid, Skycons.FOG);
-        break;               
-    case "24":  //windy
-        skycons.set(canvasid, Skycons.WIND);
-        break;         
-    case "25":  //cold
-        skycons.set(canvasid, Skycons.WIND);
-        break;               
-    case "26":  //cloudy
-        skycons.set(canvasid, Skycons.CLOUDY);
-        break;               
-    case "27":  //mostly cloudy (night)
-        skycons.set(canvasid, Skycons.CLOUDY);
-        break;               
-    case "28":  //mostly cloudy (day)
-        skycons.set(canvasid, Skycons.CLOUDY);
-        break;               
-    case "29":  //partly cloudy (night)
-        skycons.set(canvasid, Skycons.PARTLY_CLOUDY_NIGHT);
-        break;               
-    case "30":  //partly cloudy (day)
-        skycons.set(canvasid, Skycons.PARTLY_CLOUDY_DAY);
-        break;      
-    case "31":  //clear (night)
-        skycons.set(canvasid, Skycons.CLEAR_NIGHT);
-        break;              
-    case "32":  //sunny
-        skycons.set(canvasid, Skycons.CLEAR_DAY);
-        break;              
-    case "33":  //fair (night)
-        skycons.set(canvasid, Skycons.CLEAR_NIGHT);
-        break;              
-    case "34":  //fair (day)
-        skycons.set(canvasid, Skycons.CLEAR_DAY);
-        break;              
-    case "35":  //mixed rain and hail
-        skycons.set(canvasid, Skycons.RAIN);
-        break;              
-    case "36":  //hot
-        skycons.set(canvasid, Skycons.CLEAR_DAY);
-        break;              
-    case "37":  //isolated thunderstorms
-        skycons.set(canvasid, Skycons.RAIN);
-        break;              
-    case "38":  //scattered thunderstorms
-        skycons.set(canvasid, Skycons.RAIN);
-        break;              
-    case "39":  //scattered thunderstorms
-        skycons.set(canvasid, Skycons.RAIN);
-        break;              
-    case "40":  //scattered showers
-        skycons.set(canvasid, Skycons.RAIN);
-        break;              
-    case "41":  //heavy snow
-        skycons.set(canvasid, Skycons.SNOW);
-        break;              
-    case "42":  //scattered snow showers
-        skycons.set(canvasid, Skycons.SNOW);
-        break;              
-    case "43":  //heavy snow
-        skycons.set(canvasid, Skycons.SNOW);
-        break;              
-    case "44":  //partly cloudy
-        skycons.set(canvasid, Skycons.CLOUDY);
-        break;              
-    case "45":  //thundershowers
-        skycons.set(canvasid, Skycons.RAIN);
-        break;              
-    case "46":  //snow showers
-        skycons.set(canvasid, Skycons.SNOW);
-        break;              
-    case "47":  //isolated thundershowers
-        skycons.set(canvasid, Skycons.RAIN);
-        break;                      
-    default:
+    
         skycons.set(canvasid, Skycons.CLEAR_DAY);
     };    
 };
