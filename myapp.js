@@ -66,7 +66,7 @@ var changeDay1 = function(tempL, tempH, day,  yahoocode ){
      if (index === 0) {$(this).text(day)}
      });
   $('td').each( function (index) {
-     if (index===0) { $(this).replaceWith('<td>'+Math.round((f-32.0)*5.0/9.0)(tempL)+'-'+Math.round((f-32.0)*5.0/9.0)(tempH)+' &#8451;</td>');}  
+     if (index===0) { $(this).replaceWith('<td>'+f2c(tempL)+'-'+f2c(tempH)+' &#8451;</td>');}  
     });
   setSkyconsByYahooCode("day1",yahoocode);                              
 };
@@ -76,7 +76,7 @@ var changeDay2 = function(tempL, tempH, day,  yahoocode ){
      if (index === 1) {$(this).text(day)}
      });
   $('td').each( function (index) {
-     if (index===1) { $(this).replaceWith('<td>'+Math.round((f-32.0)*5.0/9.0)(tempL)+'-'+Math.round((f-32.0)*5.0/9.0)(tempH)+' &#8451;</td>');}  
+     if (index===1) { $(this).replaceWith('<td>'+f2c(tempL)+'-'+f2c(tempH)+' &#8451;</td>');}  
     });
   setSkyconsByYahooCode("day2",yahoocode);                              
 };
@@ -86,7 +86,7 @@ var changeDay3 = function(tempL, tempH, day,  yahoocode ){
      if (index === 2) {$(this).text(day)}
      });
   $('td').each( function (index) {
-     if (index===2) { $(this).replaceWith('<td>'+Math.round((f-32.0)*5.0/9.0)(tempL)+'-'+Math.round((f-32.0)*5.0/9.0)(tempH)+' &#8451;</td>');}  
+     if (index===2) { $(this).replaceWith('<td>'+f2c(tempL)+'-'+f2c(tempH)+' &#8451;</td>');}  
     });
   setSkyconsByYahooCode("day3",yahoocode);                              
 };  
